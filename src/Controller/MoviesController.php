@@ -51,7 +51,10 @@ class MoviesController extends AppController
     {
         $movie = $this->Movies->newEntity();
         if ($this->request->is('post')) {
+            debug($this->request->getData());
             $movie = $this->Movies->patchEntity($movie, $this->request->getData());
+            debug($movie);
+            die();
             if ($this->Movies->save($movie)) {
                 $this->Flash->success(__('The movie has been saved.'));
 
@@ -70,7 +73,7 @@ class MoviesController extends AppController
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
+    public function edit($id = NULL)
     {
         $movie = $this->Movies->get($id, [
             'contain' => []
