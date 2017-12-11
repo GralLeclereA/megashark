@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Showtime[]|\Cake\Collection\CollectionInterface $showtimes
@@ -58,4 +59,32 @@
         </ul>
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
+    
+        <h3><?= __('Planning') ?></h3>
+        
+        
+    
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th scope="col"><?='Monday' ?></th>
+                <th scope="col"><?='Tuesday' ?></th>
+                <th scope="col"><?='Wednesday' ?></th>
+                <th scope="col"><?='Thursday' ?></th>
+                <th scope="col"><?='Friday' ?></th>
+                <th scope="col"><?='Saturday' ?></th>
+                <th scope="col"><?='Sunday' ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php for($i=1;$i<=7;$i++): ?>
+            
+                <td><?= $Week[$i][1]?></td>
+            
+                
+            
+            <?php endfor; ?>
+        </tbody>
+    
+    
 </div>

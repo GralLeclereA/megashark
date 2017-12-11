@@ -27,6 +27,13 @@ class ShowtimesController extends AppController
 
         $this->set(compact('showtimes'));
         $this->set('_serialize', ['showtimes']);
+        $Week=[];
+
+        foreach($showtimes as $sts){
+            $Week[$sts->start->format('N')][]=$sts;
+        }
+        $this->set(compact('Week')); 
+        $this->set('_serialize', ['Week']);
     }
 
     /**

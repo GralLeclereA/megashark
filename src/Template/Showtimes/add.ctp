@@ -23,6 +23,7 @@
             echo $this->Form->control('room_id', ['options' => $rooms]);
             echo $this->Form->control('start');
             echo $this->Form->control('end');
+            echo $this->Form->control('day');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
